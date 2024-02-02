@@ -78,6 +78,12 @@ export default function NavigationSideMenu() {
             <LogInIcon size={14} />
             Fazer Login
           </Button>
+
+          <Button variant="outline" className="justify-start gap-1" asChild>
+            <Link href="/">
+              <HomeIcon size={14} /> Início
+            </Link>
+          </Button>
         </div>
       )}
     </SheetContent>

@@ -14,7 +14,7 @@ interface BarbershopInfoProps {
 }
 
 export default function BarbershopInfo({ barbershop }: BarbershopInfoProps) {
-  const { back } = useRouter();
+  const { replace } = useRouter();
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function BarbershopInfo({ barbershop }: BarbershopInfoProps) {
           size="icon"
           variant="outline"
           className="absolute left-4 top-4 z-50"
-          onClick={() => back()}
+          onClick={() => replace("/")}
         >
           <ChevronLeftIcon />
         </Button>
