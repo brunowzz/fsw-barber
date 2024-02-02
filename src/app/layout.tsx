@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Footer from "@/components/footer";
+import AuthProvider from "@/providers/auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${inter.className} dark`}>{children}</body>
-      <Footer />
+      <body className={`${inter.className} dark`}>
+        <AuthProvider>
+          {children}
+          <Footer />
+        </AuthProvider>
+      </body>
     </html>
   );
 }
