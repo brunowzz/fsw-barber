@@ -7,8 +7,11 @@ import Search from "./components/search";
 import BookingItem from "@/components/booking-item";
 import HighlightedSubtitle from "@/components/highlighted-subtitle";
 import BarbershopItem from "./components/barbershop-item";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Home() {
+  const session = await getServerSession(authOptions);
   const dayOfWeekAndMonth: string = format(new Date(), "EEEE',' dd 'de' MMMM", {
     locale: ptBR,
   });
@@ -17,7 +20,9 @@ export default async function Home() {
   return (
     <main className="flex flex-col gap-6 p-5">
       <section>
-        <h2 className="text-xl font-bold">Olá, Miguel!</h2>
+        <h2 className="overflow-hidden text-ellipsis text-nowrap text-xl font-bold">
+          Olá, {session ? session?.user?.name : "Visitante"}!
+        </h2>
         <p className="text-sm capitalize">{dayOfWeekAndMonth}</p>
       </section>
 
@@ -25,13 +30,15 @@ export default async function Home() {
         <Search />
       </section>
 
-      <section>
-        <HighlightedSubtitle>Agendamentos</HighlightedSubtitle>
+      {session && (
+        <section>
+          <HighlightedSubtitle>Agendamentos</HighlightedSubtitle>
 
-        <div className="scroll">
-          <BookingItem />
-        </div>
-      </section>
+          <div className="scroll">
+            <BookingItem />
+          </div>
+        </section>
+      )}
 
       <section>
         <HighlightedSubtitle>Recomendados</HighlightedSubtitle>
