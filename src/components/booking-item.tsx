@@ -4,9 +4,9 @@ import { Card, CardContent } from "./ui/card";
 
 export default function BookingItem() {
   return (
-    <Card>
+    <Card className="min-w-full">
       <CardContent className="flex items-center justify-between p-0">
-        <div className="flex flex-col gap-2 p-5">
+        <div className="flex flex-[3] flex-col gap-2 p-5">
           <Badge className="w-fit bg-[#221C3D] text-primary hover:bg-[#221C3D]">
             Confirmado
           </Badge>
@@ -22,7 +22,7 @@ export default function BookingItem() {
           </div>
         </div>
 
-        <div className="border--secondary flex flex-col items-center justify-center gap-1 border-l border-solid p-5">
+        <div className="flex flex-1 flex-col items-center justify-center gap-1 border-l border-solid border-secondary p-5">
           <p className="text-sm">Fevereiro</p>
           <p className="text-2xl">6</p>
           <p className="text-sm">09:45</p>

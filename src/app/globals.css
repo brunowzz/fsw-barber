@@ -44,4 +44,8 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+
+  .scroll {
+    @apply flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden
+  }
 }

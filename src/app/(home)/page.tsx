@@ -1,15 +1,19 @@
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
+import { db } from "@/lib/prisma";
+
 import Header from "@/components/header";
 import Search from "./components/search";
 import BookingItem from "@/components/booking-item";
 import HighlightedSubtitle from "@/components/highlighted-subtitle";
+import BarbershopItem from "./components/barbershop-item";
 
-export default function Home() {
+export default async function Home() {
   const dayOfWeekAndMonth: string = format(new Date(), "EEEE',' dd 'de' MMMM", {
     locale: ptBR,
   });
+  const barbershops = await db.barbershop.findMany({});
 
   return (
     <>
@@ -25,8 +29,31 @@ export default function Home() {
         </section>
 
         <section>
-          <HighlightedSubtitle> Agendamentos</HighlightedSubtitle>
-          <BookingItem />
+          <HighlightedSubtitle>Agendamentos</HighlightedSubtitle>
+
+          <div className="scroll">
+            <BookingItem />
+          </div>
+        </section>
+
+        <section>
+          <HighlightedSubtitle>Recomendados</HighlightedSubtitle>
+
+          <div className="scroll">
+            {barbershops.map((barbershop) => (
+              <BarbershopItem key={barbershop.name} barbershop={barbershop} />
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <HighlightedSubtitle>Populares</HighlightedSubtitle>
+
+          <div className="scroll">
+            {barbershops.map((barbershop) => (
+              <BarbershopItem key={barbershop.name} barbershop={barbershop} />
+            ))}
+          </div>
         </section>
       </main>
     </>
