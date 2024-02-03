@@ -43,6 +43,7 @@ export default async function BarbershopsDeatilsPage({
             key={service.id}
             service={service}
             isAuthenticated={!!session?.user}
+            barbershop={barbershop}
           />
         ))}
       </section>
