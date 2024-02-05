@@ -15,7 +15,24 @@ export default async function Home() {
   const dayOfWeekAndMonth: string = format(new Date(), "EEEE',' dd 'de' MMMM", {
     locale: ptBR,
   });
-  const barbershops = await db.barbershop.findMany({});
+
+  const [barbershops, confirmedBookings] = await Promise.all([
+    db.barbershop.findMany({}),
+    session?.user
+      ? db.booking.findMany({
+          where: {
+            userId: (session.user as any).id,
+            date: {
+              gte: new Date(),
+            },
+          },
+          include: {
+            service: true,
+            barbershop: true,
+          },
+        })
+      : Promise.resolve([]),
+  ]);
 
   return (
     <main className="flex flex-col gap-6 p-5">
@@ -30,13 +47,15 @@ export default async function Home() {
         <Search />
       </section>
 
-      {session && (
+      {confirmedBookings.length > 0 && (
         <section>
-          <HighlightedSubtitle>Agendamentos</HighlightedSubtitle>
+          <HighlightedSubtitle>Seus Agendamentos</HighlightedSubtitle>
 
-          {/* <div className="scroll">
-            <BookingItem />
-          </div> */}
+          <div className="scroll">
+            {confirmedBookings.map((booking) => (
+              <BookingItem key={booking.id} booking={booking} />
+            ))}
+          </div>
         </section>
       )}
 

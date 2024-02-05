@@ -1,4 +1,4 @@
-import { SheetContent, SheetHeader, SheetTitle } from "./ui/sheet";
+import { SheetClose, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet";
 import { Button } from "./ui/button";
 import {
   Calendar,
@@ -48,17 +48,29 @@ export default function NavigationSideMenu() {
           </div>
 
           <div className="flex flex-col gap-3 px-5">
-            <Button variant="outline" className="justify-start gap-1" asChild>
-              <Link href="/">
-                <HomeIcon size={14} /> Início
-              </Link>
-            </Button>
+            <SheetClose asChild>
+              <Button
+                variant="outline"
+                className="w-full justify-start gap-1"
+                asChild
+              >
+                <Link href="/">
+                  <HomeIcon size={14} /> Início
+                </Link>
+              </Button>
+            </SheetClose>
 
-            <Button variant="outline" className="justify-start gap-1" asChild>
-              <Link href="/bookings">
-                <Calendar size={14} /> Agendamentos
-              </Link>
-            </Button>
+            <SheetClose asChild>
+              <Button
+                variant="outline"
+                className="w-full justify-start gap-1"
+                asChild
+              >
+                <Link href="/bookings">
+                  <Calendar size={14} /> Agendamentos
+                </Link>
+              </Button>
+            </SheetClose>
           </div>
         </>
       )}
@@ -79,11 +91,17 @@ export default function NavigationSideMenu() {
             Fazer Login
           </Button>
 
-          <Button variant="outline" className="justify-start gap-1" asChild>
-            <Link href="/">
-              <HomeIcon size={14} /> Início
-            </Link>
-          </Button>
+          <SheetClose asChild>
+            <Button
+              variant="outline"
+              className="w-full justify-start gap-1"
+              asChild
+            >
+              <Link href="/">
+                <HomeIcon size={14} /> Início
+              </Link>
+            </Button>
+          </SheetClose>
         </div>
       )}
     </SheetContent>

@@ -183,7 +183,6 @@ const ServiceItem = ({
                     />
                   </div>
 
-                  {/* Mostrar lista de horários apenas se alguma data estiver selecionada */}
                   {date && (
                     <div className="flex gap-3 overflow-x-auto border-t border-solid border-secondary px-5 py-6 [&::-webkit-scrollbar]:hidden">
                       {timeList.map((time) => (
