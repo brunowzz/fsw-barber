@@ -8,7 +8,7 @@ import BookingItem from "@/components/booking-item";
 import HighlightedSubtitle from "@/components/highlighted-subtitle";
 import BarbershopItem from "./components/barbershop-item";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);

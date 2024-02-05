@@ -1,6 +1,6 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import BookingItem from "@/components/booking-item";
 import HighlightedSubtitle from "@/components/highlighted-subtitle";
+import { authOptions } from "@/lib/authOptions";
 import { db } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
