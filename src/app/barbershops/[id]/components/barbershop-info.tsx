@@ -46,7 +46,7 @@ export default function BarbershopInfo({ barbershop }: BarbershopInfoProps) {
           src={barbershop.imageUrl}
           fill
           alt={barbershop.name}
-          className="object-cover opacity-85"
+          className="aspect-square object-cover opacity-85 sm:aspect-video"
         />
       </figure>
 
