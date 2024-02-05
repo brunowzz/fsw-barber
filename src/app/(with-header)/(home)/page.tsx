@@ -34,9 +34,9 @@ export default async function Home() {
         <section>
           <HighlightedSubtitle>Agendamentos</HighlightedSubtitle>
 
-          <div className="scroll">
+          {/* <div className="scroll">
             <BookingItem />
-          </div>
+          </div> */}
         </section>
       )}
 
