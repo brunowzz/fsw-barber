@@ -10,6 +10,17 @@ import {
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "./ui/alert-dialog";
 
 export default function NavigationSideMenu() {
   const { data } = useSession();
@@ -42,9 +53,35 @@ export default function NavigationSideMenu() {
               <h2 className="font-bold">{data.user.name}</h2>
             </div>
 
-            <Button variant="outline" size="icon" onClick={() => signOut()}>
-              <LogOutIcon />
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger>
+                <Button variant="outline" size="icon">
+                  <LogOutIcon />
+                </Button>
+              </AlertDialogTrigger>
+
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Sair</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Deseja mesmo sair da plataforma?
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+
+                <AlertDialogFooter className="flex-row gap-3">
+                  <AlertDialogCancel className="w-full">
+                    Voltar
+                  </AlertDialogCancel>
+
+                  <AlertDialogAction
+                    className="w-full"
+                    onClick={() => signOut()}
+                  >
+                    Sair
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
 
           <div className="flex flex-col gap-3 px-5">
