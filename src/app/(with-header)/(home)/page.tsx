@@ -64,7 +64,9 @@ export default async function Home() {
 
         <div className="scroll">
           {barbershops.map((barbershop) => (
-            <BarbershopItem key={barbershop.name} barbershop={barbershop} />
+            <div key={barbershop.name} className="min-w-[167px] max-w-[167px]">
+              <BarbershopItem barbershop={barbershop} />
+            </div>
           ))}
         </div>
       </section>
@@ -74,7 +76,9 @@ export default async function Home() {
 
         <div className="scroll">
           {barbershops.map((barbershop) => (
-            <BarbershopItem key={barbershop.name} barbershop={barbershop} />
+            <div key={barbershop.name} className="min-w-[167px] max-w-[167px]">
+              <BarbershopItem barbershop={barbershop} />
+            </div>
           ))}
         </div>
       </section>
