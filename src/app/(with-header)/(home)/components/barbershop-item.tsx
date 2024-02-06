@@ -45,10 +45,10 @@ export default function BarbershopItem({ barbershop }: BarbershopItemProps) {
         </div>
 
         <div className="px-2 pb-3">
-          <h2 className="mt-2 overflow-hidden text-ellipsis text-nowrap font-bold">
+          <h2 className="mt-2 overflow-hidden text-ellipsis whitespace-nowrap text-nowrap font-bold">
             {barbershop.name}
           </h2>
-          <p className="overflow-hidden text-ellipsis text-nowrap text-sm text-gray-400">
+          <p className="overflow-hidden text-ellipsis whitespace-nowrap text-nowrap text-sm text-gray-400">
             {barbershop.address}
           </p>
           <Button
