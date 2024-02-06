@@ -48,7 +48,7 @@ export default function BookingItem({ booking }: BookingItemProps) {
   const bookingConfirmed = isPast(booking.date);
   const monthBooking = format(booking.date, "MMMM", { locale: ptBR });
   const dayBooking = format(booking.date, "dd", { locale: ptBR });
-  const hourBooking = format(booking.date, "hh:mm", { locale: ptBR });
+  const hourBooking = format(booking.date, "HH:mm", { locale: ptBR });
 
   async function handleCancelClick() {
     setIsDeleteLoading(true);
@@ -97,7 +97,7 @@ export default function BookingItem({ booking }: BookingItemProps) {
         </Card>
       </SheetTrigger>
 
-      <SheetContent className="px-0">
+      <SheetContent className="overflow-y-auto px-0">
         <SheetHeader className="border-b border-solid border-secondary px-5 pb-6 text-left">
           <SheetTitle>Informações da Reserva</SheetTitle>
         </SheetHeader>
@@ -160,7 +160,7 @@ export default function BookingItem({ booking }: BookingItemProps) {
 
               <div className="flex justify-between">
                 <h3 className="text-sm text-gray-400">Horário</h3>
-                <h4 className="text-sm">{format(booking.date, "hh:mm")}</h4>
+                <h4 className="text-sm">{format(booking.date, "HH:mm")}</h4>
               </div>
 
               <div className="flex justify-between">
