@@ -17,7 +17,7 @@ import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { generateDayTimeList } from "../helpers/hours";
-import { format, setHours, setMinutes } from "date-fns";
+import { addDays, format, setHours, setMinutes } from "date-fns";
 import { saveBooking } from "../actions/save-bookings";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
@@ -168,7 +168,7 @@ const ServiceItem = ({
                   </Button>
                 </SheetTrigger>
 
-                <SheetContent className="p-0">
+                <SheetContent className="overflow-y-auto overflow-x-hidden p-0">
                   <SheetHeader className="border-b border-solid border-secondary px-5 py-6 text-left">
                     <SheetTitle>Fazer Reserva</SheetTitle>
                   </SheetHeader>
@@ -179,7 +179,7 @@ const ServiceItem = ({
                       selected={date}
                       onSelect={handleDateClick}
                       locale={ptBR}
-                      fromDate={new Date()}
+                      fromDate={addDays(new Date(), 1)}
                     />
                   </div>
 
@@ -237,7 +237,7 @@ const ServiceItem = ({
                     </Card>
                   </div>
 
-                  <SheetFooter className="px-5">
+                  <SheetFooter className="mb-6 px-5">
                     <Button
                       onClick={handleBookingSubmit}
                       disabled={!hour || !date || submitIsLoading}
