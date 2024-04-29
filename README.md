@@ -1,8 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="top">FSW Barber</h1>
 
-## Getting Started
+<img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/gif.gif" alt="Imagem do projeto"/>
 
-First, run the development server:
+> 🔍 Explore o FSW Barber.
+
+## :page_facing_up: Visão Geral
+
+O FSW Barber foi um projeto desenvolvido durante a Full Stack Week. Trata-se de uma aplicação de agendamento para barbearias, oferecendo uma experiência intuitiva e eficiente tanto para clientes quanto para proprietários de barbearias.
+
+## 📁 Páginas
+
+- **/**:
+  - A página inicial exibe os agendamentos mais recentes, barbearias recomendadas e populares, e oferece a funcionalidade de pesquisa por barbearias.
+
+- **/barbershops/:id**:
+  - Esta página permite visualizar as informações detalhadas de uma barbearia específica e realizar agendamentos naquele local.
+
+- **/query?search=**:
+  - A página de pesquisa permite buscar por barbearias pelo nome.
+
+- **/bookings**:
+  - Nesta página, os clientes podem visualizar seus agendamentos.
+
+## 📁 Screens
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/1.png" alt="Imagem do projeto" width="200"/>
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/2.png" alt="Imagem do projeto" width="200"/>
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/3.png" alt="Imagem do projeto" width="200"/>
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/4.png" alt="Imagem do projeto" width="200"/>
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/5.png" alt="Imagem do projeto" width="200"/>
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/6.png" alt="Imagem do projeto" width="200"/>
+    <img src="https://github.com/brunowzz/fsw-barber/blob/master/.github/screens/7.png" alt="Imagem do projeto" width="200"/>
+</div>
+
+## 🚀 Tecnologias
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn/UI](https://github.com/shadcn/ui)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Prisma](https://www.prisma.io/)
+
+## :white_check_mark: Requisitos
+
+Antes de iniciar :checkered_flag:, certifique-se de ter o [Node.js](https://nodejs.org/) e um navegador web instalados em sua máquina.
+
+## :checkered_flag: Iniciar
 
 ```bash
 npm run dev
@@ -14,23 +57,21 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Colaborador
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/brunowzz">
+        <img src="https://avatars.githubusercontent.com/u/94939630?v=4" width="160px;" alt="Foto do Bruno"/><br>
+        <sub>
+          <b>Bruno Vinícius</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📝 Licença
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto está sob licença. Consulte o arquivo [LICENSE](LICENSE.md) para obter mais detalhes.
